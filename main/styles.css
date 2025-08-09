@@ -1,0 +1,129 @@
+:root{
+  --accent:#00A78E;
+  --accent-2:#006f5e;
+  --bg:#ffffff;
+  --txt:#0b0b0b;
+  --muted:#6b7280;
+  --max-width:1200px;
+  --pad:1.25rem;
+  --radius:14px;
+  --flow:1.15rem;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  font-size:16px; /* base */
+}
+
+.srr{cursor: pointer;}
+
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:linear-gradient(180deg,#fbfdfc 0%,#ffffff 100%);color:var(--txt);line-height:1.6}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 var(--pad)}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);border-bottom:1px solid #f2f4f3}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+.brand{display:flex;align-items:center;gap:.7rem}
+.logo{height:34px}
+.brand-name{font-weight:700}
+.nav{display:none;gap:1.2rem}
+.nav a{text-decoration:none;color:var(--txt);font-weight:600;padding:.5rem}
+.nav-toggle{background:none;border:0;font-size:1.2rem;cursor:pointer}
+
+/* HERO */
+.hero{padding:3rem 0}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+.eyebrow{font-size:.92rem;color:var(--accent-2);font-weight:700;letter-spacing:.2px}
+.hero-copy h1{font-size:2rem;margin:.3rem 0;line-height:1.03}
+.lead{color:var(--muted);margin:.9rem 0;max-width:60ch;font-size:1.05rem}
+.cta-row{display:flex;gap:1rem;margin-top:1rem}
+.btn{display:inline-block;padding:.75rem 1.05rem;border-radius:12px;border:1px solid transparent;text-decoration:none;cursor:pointer;font-weight:700;font-size:1rem}
+.btn.primary{background:var(--accent);color:white;box-shadow:0 12px 28px rgba(0,167,142,0.12)}
+.btn.ghost{background:#fff;border:1px solid #e9f6f1;color:var(--accent-2)}
+.mini-meta{display:flex;gap:1.4rem;margin-top:1.2rem;flex-direction:column;font-size:.95rem}
+.mini-meta div strong{display:inline-block;margin-right:.4rem}
+
+/* hero art */
+.hero-art{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.logo-card{background:linear-gradient(180deg,#ffffff 0%,#fbfffc 100%);padding:1.2rem;border-radius:20px;box-shadow:0 20px 48px rgba(2,8,23,0.06);display:flex;align-items:center;justify-content:center}
+.logo-large{max-width:220px;height:auto}
+
+/* breathing space element */
+.section-spacer{height:28px}
+
+/* value */
+.value-section{padding:2rem 0}
+.value-grid{display:grid;gap:1.2rem}
+.value-card{background:#fff;padding:1.2rem;border-radius:12px;border:1px solid #f2f4f3;min-height:120px}
+
+/* SERVICES (IMPROVED) */
+.services-section{padding:2rem 0}
+.services-grid.improved{display:grid;grid-template-columns:1fr;gap:1rem}
+.service-card{
+  background:#fff;padding:18px;border-radius:12px;border:1px solid #f2f4f3;
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;
+  min-height:160px;
+}
+.service-card h4{margin:.2rem 0}
+.service-card p{color:var(--muted);margin:0;font-size:0.98rem}
+.service-icon{width:72px;height:72px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:linear-gradient(180deg,#fbfffc 0%,#ffffff 100%);box-shadow:0 8px 20px rgba(2,8,23,0.04)}
+
+/* portfolio */
+.portfolio-section{padding:2rem 0}
+.portfolio-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.portfolio-item img{width:100%;height:auto;border-radius:10px;border:1px solid #f2f4f3}
+
+/* pricing */
+.pricing-section{padding:2rem 0}
+.pricing-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.price{background:#fff;padding:1.1rem;border-radius:12px;border:1px solid #f2f4f3}
+.price.accent{border-color:rgba(0,167,142,0.12);box-shadow:0 12px 30px rgba(0,167,142,0.06)}
+.amount{font-weight:800;font-size:1.25rem;margin:.4rem 0}
+
+/* faq */
+.faq-section{padding:1.5rem 0}
+.faq-section details{background:#fff;padding:.9rem;border-radius:8px;border:1px solid #f2f4f3;margin:.6rem 0}
+
+/* contact */
+.contact-section{padding:2rem 0}
+.contact-form{display:grid;gap:.7rem;max-width:720px}
+input,textarea,select{padding:.7rem;border-radius:10px;border:1px solid #eef3f0;font:inherit}
+.form-status{color:var(--muted);margin-top:.4rem}
+
+/* footer */
+.site-footer{padding:1.5rem 0;border-top:1px solid #f2f4f3;color:var(--muted);font-size:.95rem}
+
+/* DESKTOP / TABLET LAYOUTS */
+@media(min-width:740px){
+  .nav{display:flex}
+  .nav-toggle{display:none}
+  .hero-grid{grid-template-columns:1fr 460px}
+  .value-grid{grid-template-columns:repeat(3,1fr)}
+  .portfolio-grid{grid-template-columns:repeat(3,1fr)}
+  .pricing-grid{grid-template-columns:repeat(4,1fr)}
+  .mini-meta{flex-direction:row}
+  .services-grid.improved{grid-template-columns:repeat(3,1fr)}
+
+}
+
+/* LARGER DESKTOP */
+@media(min-width:1100px){
+  .services-grid.improved{grid-template-columns:repeat(4,1fr)}
+
+}
+
+/* mobile niceties */
+@media(max-width:420px){
+  :root{font-size:15px}
+  .logo-large{max-width:140px}
+  .hero-copy h1{font-size:1.25rem}
+  .lead{font-size:.98rem;max-width:100%}
+  .service-card{min-height:140px}
+  .ser{margin-left: 10px;}
+  .por{margin-left: 10px;}
+}
+
+/* focus */
+a:focus, button:focus {outline:3px solid rgba(0,167,142,0.14);outline-offset:3px}
+.muted{color:var(--muted)}
+.small{font-size:.92rem}

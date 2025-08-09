@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily-To-Do</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="main">
+        <header>
+            <p class="first-line">Daily To Do Tasks</p>
+            <p class="second-line">Add tasks, mark done and they stay after reloaded</p>
+        </header>
+        <section class="sec1">
+            <input type="text" placeholder="What do you need to do?" onkeydown="usingEnter(event.key)" class="input">
+            <button onclick="gettingInput();addingToAll()" class="add-button">Add</button>
+        </section>
+        <section class="sec2">
+            <div class="div-sec2-line1">
+                <p class="p-yourtasks">Your Tasks 
+                
+                </p>
+                <div class="align-line1">
+                    <button onclick="addingToAll()" class="button-all">All</button>
+                    <button onclick="addingToActive()" class="button-active">Active</button>
+                    <button onclick="addingToCompleted()" class="button-completed">Completed</button>
+                </div>
+            </div>
+            
+            <div class="div-sec2-line2 js-tasks">
+                No Tasks To Show
+            </div>
+            <div class="div-button-completed2">
+                <button onclick="clearCompletedTasks()" class="button-completed2">Clear completed</button>
+            </div>
+            
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
