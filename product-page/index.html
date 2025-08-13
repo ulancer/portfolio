@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product demo — Ulancer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">Ulancer</div>
+      <button id="openCartBtn" class="cart-btn" aria-label="Open cart">
+        Cart (<span id="cartCount" aria-live="polite">0</span>)
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="product">
+      <div class="gallery">
+        <!-- main image (will be updated by JS but default uses the single asset) -->
+        <img id="mainImage" src="assets/main-image.jpg" alt="Product image">
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+
+      <div class="details">
+        <h1 id="productTitle">Classic Sneaker</h1>
+        <p id="productDesc">A clean product page demo. Variant selector + persistent cart.</p>
+
+        <div class="variants">
+          <label for="variantSelect"><strong>Variant</strong></label>
+          <select id="variantSelect"></select>
+        </div>
+
+        <div class="price-row">
+          <div class="price" id="price">₹0</div>
+          <button id="addToCart" class="btn primary">Add to cart</button>
+        </div>
+
+        <div class="note small muted">Cart persists on reload (stored locally in your browser).</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CART SIDEPANEL -->
+  <aside id="cartModal" class="cart-modal" aria-hidden="true">
+    <div class="cart-inner">
+      <button id="closeCart" class="close" aria-label="Close cart">×</button>
+      <h2>Your Cart</h2>
+      <div id="cartList" class="cart-list"></div>
+
+      <div class="cart-footer">
+        <div class="cart-total">Total: <span id="cartTotal">₹0</span></div>
+        <div class="cart-actions">
+          <button id="clearCart" class="btn ghost">Clear</button>
+          <button id="checkout" class="btn primary">Checkout (mock)</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
